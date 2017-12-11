@@ -4,9 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 
 namespace SeriesApp.Models
-{    
+{
     public class Serie
     {
         [Key]
@@ -18,5 +19,7 @@ namespace SeriesApp.Models
         public DateTime CreationDate { get; set; }
         public int Episodes { get; set; }
         public Genre Genre { get; set; }
+        [ScriptIgnore]
+        public ICollection<User> Favourites { get; set; }
     }
 }

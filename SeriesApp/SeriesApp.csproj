@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SeriesController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -137,10 +138,15 @@
     <Compile Include="Migrations\201712012348060_Initial.Designer.cs">
       <DependentUpon>201712012348060_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712110110250_UserFavourites.cs" />
+    <Compile Include="Migrations\201712110110250_UserFavourites.Designer.cs">
+      <DependentUpon>201712110110250_UserFavourites.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\SeriesContext.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -201,6 +208,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712012348060_Initial.resx">
       <DependentUpon>201712012348060_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712110110250_UserFavourites.resx">
+      <DependentUpon>201712110110250_UserFavourites.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
