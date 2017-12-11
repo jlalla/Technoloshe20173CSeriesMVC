@@ -17,6 +17,11 @@ namespace SeriesApp.Controllers
         // GET: Series
         public ActionResult Index()
         {
+            //preguntamos si está logueado 
+            //(porque en el login agregamos el objeto del usuario)
+            if (Session["LoggedUser"] == null)
+                return RedirectToAction("Login", "Users");
+
             return View(db.Series.ToList());
         }
 
@@ -38,6 +43,10 @@ namespace SeriesApp.Controllers
         // GET: Series/Create
         public ActionResult Create()
         {
+            //vamos a buscar los géneros a la base de datos
+            List<Genre> genresList = db.Genres.ToList();
+            //se lo pasamos a la vista, para que los itere y los ponga en un select
+            ViewBag.Genres = genresList;
             return View();
         }
 
@@ -46,7 +55,7 @@ namespace SeriesApp.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Summary,CreationDate,Episodes")] Serie serie)
+        public ActionResult Create([Bind(Include = "ID,Name,Summary,CreationDate,Episodes,Genre_ID")] Serie serie)
         {
             if (ModelState.IsValid)
             {

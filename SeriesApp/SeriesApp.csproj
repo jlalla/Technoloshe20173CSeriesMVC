@@ -131,6 +131,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SeriesController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -141,6 +142,10 @@
     <Compile Include="Migrations\201712110110250_UserFavourites.cs" />
     <Compile Include="Migrations\201712110110250_UserFavourites.Designer.cs">
       <DependentUpon>201712110110250_UserFavourites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712112217559_GenreID.cs" />
+    <Compile Include="Migrations\201712112217559_GenreID.Designer.cs">
+      <DependentUpon>201712112217559_GenreID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -192,6 +197,7 @@
     <Content Include="Views\Series\Details.cshtml" />
     <Content Include="Views\Series\Edit.cshtml" />
     <Content Include="Views\Series\Index.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712110110250_UserFavourites.resx">
       <DependentUpon>201712110110250_UserFavourites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712112217559_GenreID.resx">
+      <DependentUpon>201712112217559_GenreID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

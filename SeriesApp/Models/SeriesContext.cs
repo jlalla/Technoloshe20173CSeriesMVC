@@ -30,6 +30,8 @@ namespace SeriesApp.Models
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //tenemos que agregar las siguientes líneas para hacer la 
+            //relación Many to Many (NaN)
             modelBuilder.Entity<User>()
                 .HasMany<Serie>(u => u.Favourites)
                 .WithMany(f => f.Favourites)

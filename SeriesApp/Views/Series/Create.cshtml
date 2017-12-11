@@ -1,4 +1,5 @@
-﻿@model SeriesApp.Models.Serie
+﻿@using SeriesApp.Models
+@model SeriesApp.Models.Serie
 
 @{
     ViewBag.Title = "Create";
@@ -45,6 +46,13 @@
                 @Html.ValidationMessageFor(model => model.Episodes, "", new { @class = "text-danger" })
             </div>
         </div>
+        
+        <select name="Genre_ID">
+            @foreach (Genre genre in ViewBag.Genres)
+            {
+                <option value="@genre.ID">@genre.Description</option>
+            }           
+        </select>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
